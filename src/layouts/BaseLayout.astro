@@ -1,0 +1,32 @@
+---
+// This corresponds to the "Frontmatter" - think of it as server-side execution before render.
+const { title } = Astro.props;
+---
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Amicale Versailles Montreuil</h1>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/events">Evénements</a></li>
+          <li><a href="/team">Equipe</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot /> 
+    </main>
+
+    <footer>
+      <p>© 2025 Amicale des parents d'élèves</p>
+    </footer>
+  </body>
+</html>
+
