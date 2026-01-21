@@ -1,27 +1,88 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ecoleCondaminesImg from "../images/ecole-condamines-high.webp";
+import Member from "../components/Member.astro";
+
 ---
 
-<BaseLayout title="Acceuile - Amicale Versailles Montreuil">
-  <h2>Qui sommes nous ?</h2>
-  <h3>Représenter les familles</h3>
-  <p>Participation aux commissions municipales, signalement des besoins...</p>
-
-  <div
-    style="background: #ccc; height: 200px; display: flex; align-items: center; justify-content: center;"
-  >
-    [Image Ecole Condamines]
+<BaseLayout title="Acceuil - Amicale Versailles Montreuil">
+  <div class="fixed inset-0 -z-10">
+    <Image src={ecoleCondaminesImg} alt="" class="h-full w-full object-cover opacity-40" />
   </div>
-</BaseLayout>"
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+
+  <!-- Hero Section (The "Startup" look) -->
+  <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+      Amicale Versailles Montreuil
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mb-8">
+      Représenter les familles, participer à la vie scolaire et animer la communauté.
+    </p>
+    
+    <a href="#about" class="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition duration-300 shadow-lg">
+      Qui sommes nous ?
+    </a>
+  </div>
+
+  <!-- Content Section -->
+  <div id="about" class="section-card">
+    <div class="section-card">
+      <h2 class="text-3xl font-bold mb-6 text-center">Notre Mission</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-2 text-red-600">Représenter les familles</h3>
+        <p class="text-gray-700">Participation aux commissions municipales, signalement des besoins, et lien constant avec l'équipe pédagogique.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-2 text-red-600">Animer l'école</h3>
+        <p class="text-gray-700">Organisation de la fête de l'école, ventes de gâteaux, et financement de projets scolaires.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Section -->
+  <div class="section-card">
+  <div>
+    <h2 class="text-3xl font-bold mb-6 text-center">Notre Équipe</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <Member 
+        firstName="Elisabeth" 
+        lastName="Carissimo"
+        photo="elisabeth-carissimo.png"
+        studentTeachers={["Mme Dupont", "M. Martin"]} 
+      />
+      <Member 
+        firstName="Isabelle" 
+        lastName="Berriri" 
+        photo="isabelle-berriri.png" 
+        studentTeachers={["CE2 - Mme Rischmann", "CM2 - Mmes Marchand / Duris"]}
+      />
+      <Member 
+        firstName="Lise" 
+        lastName="Delorme" 
+        photo="lise-delorme.png" 
+        studentTeachers={["CE1 - Mme Martres", "CM1 - Mme Dupouy"]} 
+      />
+      <Member 
+        firstName="Sophie" 
+        lastName="Prinet" 
+        photo="sophie-prinet.png" 
+        studentTeachers={["CE2 - Mme Pouget Abadie"]} 
+      />
+      <Member 
+        firstName="Emilie" 
+        lastName="Auclair" 
+        photo="emilie-auclair.png" 
+        studentTeachers={["CE1 - Mme Poubet Abadie"]}
+      />
+      <Member 
+        firstName="Emilie" 
+        lastName="Daufresne" 
+        photo="emilie-daufresne.png" 
+        studentTeachers={["CE1 - Mme Martres", "CM1 - Mmes Dupouy"]}
+      />
+    </div>
+  </div>
+
+</BaseLayout>

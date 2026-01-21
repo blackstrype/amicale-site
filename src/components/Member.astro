@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  firstName: string;
+  lastName: string;
+  studentTeachers: string[];
+  photo: ImageMetadata | string;
+}
+
+const { firstName, lastName, studentTeachers, photo } = Astro.props;
+
+// 1. Import all images from the folder using Vite's import.meta.glob
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/team/*.{jpeg,jpg,png,gif}');
+
+// 2. Check if the requested image exists in the glob results
+if (!images[`../assets/team/${photo}`]) throw new Error(`"${photo}" does not exist in glob: "src/assets/team/*.{jpeg,jpg,png,gif}"`);
+
+// 3. Await the image import
+const imageModule = await images[`../assets/team/${photo}`]();
+---
+
+<div>
+  <Image src={imageModule.default} alt={`${firstName} ${lastName}`} class="w-48 h-48 object-cover rounded-3xl mb-4" />
+  <h3>{firstName} {lastName}</h3>
+  {studentTeachers.length > 0 && (
+    <div>
+      <p>Student Teachers:</p>
+      <ul>
+        {studentTeachers.map((teacher) => <li>{teacher}</li>)}
+      </ul>
+    </div>
+  )}
+</div>

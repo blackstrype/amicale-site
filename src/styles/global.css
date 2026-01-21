@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+  .section-card {
+    @apply container mx-auto my-8 px-4 py-16 bg-white/30 rounded-3xl shadow-2xl;
+  }
+}
