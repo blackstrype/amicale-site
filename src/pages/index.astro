@@ -3,86 +3,205 @@ import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ecoleCondaminesImg from "../images/ecole-condamines-high.webp";
 import Member from "../components/Member.astro";
-
 ---
 
 <BaseLayout title="Acceuil - Amicale Versailles Montreuil">
   <div class="fixed inset-0 -z-10">
-    <Image src={ecoleCondaminesImg} alt="" class="h-full w-full object-cover opacity-40" />
+    <Image
+      src={ecoleCondaminesImg}
+      alt=""
+      class="h-full w-full object-cover opacity-40"
+    />
   </div>
 
   <!-- Hero Section (The "Startup" look) -->
-  <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
-    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+  <div
+    class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4"
+  >
+    <h1 class="text-5xl md:text-6xl font-bold text-gray-700 mb-6">
       Amicale Versailles Montreuil
     </h1>
-    <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mb-8">
-      Représenter les familles, participer à la vie scolaire et animer la communauté.
+    <p class="text-xl md:text-2xl text-gray-800 max-w-2xl mb-8">
+      Représenter les familles, participer à la vie scolaire et animer la
+      communauté.
     </p>
-    
-    <a href="#about" class="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition duration-300 shadow-lg">
+
+    <a
+      href="#about"
+      class="bg-violet-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-violet-800 transition duration-300 shadow-lg"
+    >
       Qui sommes nous ?
     </a>
   </div>
 
   <!-- Content Section -->
-  <div id="about" class="section-card">
+  <div id="about">
+    <!-- Mission Card -->
     <div class="section-card">
       <h2 class="text-3xl font-bold mb-6 text-center">Notre Mission</h2>
+      <p class="text-center mb-4 text-gray-700">
+        L'amicale des parents d'élèves Condamines regroupe des parents, dont les enfants sont scolarisés à l'école des Condamines.
+      </p>
+      <p class="text-center mb-4 text-gray-700">
+        Nous sommes une association de parents d'élèves engagés, bénévoles et solidaires, réunis autour d'un objectif commun :
+      </p>
+      <p class="text-center font-bold mb-4 text-gray-700">
+        Améliorer la qualité de vie à l'école pour tous les enfants
+      </p>
+      <p class="text-center mb-4 text-gray-700">
+        Tout au long de l'année, nous mettons en place des actions concrètes pour renforcer la vie à l'école.
+      </p>
+      <p class="text-center mb-4 text-gray-700">
+        Notre engagement repose sur des valeurs de coopérations, de respect et de bienveillance, avec la conviction que l'école est un lieu de vie autant qu'un lieu d'apprentissage.
+      </p>
+    </div>
+
+    <!-- Engagements Card -->
+    <div class="section-card">
+      <h2 class="text-3xl font-bold mb-6 text-center">Nos Engagements Clés</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div>
-          <h3 class="text-xl font-bold mb-2 text-red-600">Représenter les familles</h3>
-        <p class="text-gray-700">Participation aux commissions municipales, signalement des besoins, et lien constant avec l'équipe pédagogique.</p>
+          <h3 class="text-xl font-bold mb-2 text-red-600">
+            Représenter les familles
+          </h3>
+          <p class="text-gray-700">
+            Nous participons activement aux échanges avec la municipalité pour faire entendre la vois des familles sur des sujets du quotidien scolaire, tels que :
+          </p>
+          <ul class="list-disc list-inside ml-4">
+            <li class="text-gray-700 mt-2">Participation aux commissions municipales liées à la restauration scolaire, ou au temps périscolaire.</li>
+            <li class="text-gray-700 mt-2">Signalement des besoins en matériel ou en sécurité aux abords de l'école</li>
+            <li class="text-gray-700 mt-2">Demandes d'aménagements et travaux d'améliorations </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2 text-red-600">
+            Soutenir les projets pédagogiques
+          </h3>
+          <p class="text-gray-700">
+            Nous accompagnons les enseignants dans la mise en œuvre de projets éducatifs et culturels via :
+          </p>
+          <ul class="list-disc list-inside ml-4">
+            <li class="text-gray-700 mt-2">Financement ( ou co-financement) de sorties scolaires, spectacles, ateliers</li>
+            <li class="text-gray-700 mt-2">Recherche de partenaire locaux tel que des intervenants, associations, ou artistes, afin d'enrichir les activités</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2 text-red-600">Être à l'écoute des parents</h3>
+          <p class="text-gray-700">
+            Nous mettons en place des outils pour recueillir vos besoins, idées et préoccupations concernant la vie à l'école, tels que :
+          </p>
+          <ul class="list-disc list-inside ml-4">
+            <li class="text-gray-700 mt-2">Questionnaires réguliers anonymes pour mieux comprendre vos attentes</li>
+            <li class="text-gray-700 mt-2">Des temps d'échanges informels autour d'évènements</li>
+            <li class="text-gray-700 mt-2">Mise à disposition d'une boite à idée numérique accessible à tous (lien vers la boite à idée)</li>
+            <li class="text-gray-700 mt-2">Communication régulière via une newsletter, afin de garder tous le monde informé</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2 text-red-600">
+            Contribuer activement à créer un environnement scolaire épanouissant
+          </h3>
+          <p class="text-gray-700">
+            Avec l'école, nous aidons à créer des moments de convivialité pour renforcer la communauté scolaire, comme :
+          </p>
+          <ul class="list-disc list-inside ml-4">
+            <li class="text-gray-700 mt-2">Organisation de la kermesse de l'école</li>
+            <li class="text-gray-700 mt-2">Mise en place de projet collaboratif, avec des opérations ponctuelles telles que "les boites d'amours"</li>
+          </ul>
+        </div>
       </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="section-card">
       <div>
-        <h3 class="text-xl font-bold mb-2 text-red-600">Animer l'école</h3>
-        <p class="text-gray-700">Organisation de la fête de l'école, ventes de gâteaux, et financement de projets scolaires.</p>
+        <h2 class="text-3xl font-bold mb-6 text-center">Notre Équipe</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <Member
+            firstName="Elisabeth"
+            lastName="Carissimo"
+            photo="elisabeth-carissimo.png"
+            studentTeachers={["Mme Dupont", "M. Martin"]}
+          />
+          <Member
+            firstName="Isabelle"
+            lastName="Berriri"
+            photo="isabelle-berriri.png"
+            studentTeachers={[
+              "CE2 - Mme Rischmann",
+              "CM2 - Mmes Marchand / Duris",
+            ]}
+          />
+          <Member
+            firstName="Lise"
+            lastName="Delorme"
+            photo="lise-delorme.png"
+            studentTeachers={["CE1 - Mme Martres", "CM1 - Mme Dupouy"]}
+          />
+          <Member
+            firstName="Sophie"
+            lastName="Prinet"
+            photo="sophie-prinet.png"
+            studentTeachers={["CE2 - Mme Pouget Abadie"]}
+          />
+          <Member
+            firstName="Emilie"
+            lastName="Auclair"
+            photo="emilie-auclair.png"
+            studentTeachers={["CE1 - Mme Poubet Abadie"]}
+          />
+          <Member
+            firstName="Emilie"
+            lastName="Daufresne"
+            photo="emilie-daufresne.png"
+            studentTeachers={["CE1 - Mme Martres", "CM1 - Mmes Dupouy"]}
+          />
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Team Section -->
-  <div class="section-card">
-  <div>
-    <h2 class="text-3xl font-bold mb-6 text-center">Notre Équipe</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <Member 
-        firstName="Elisabeth" 
-        lastName="Carissimo"
-        photo="elisabeth-carissimo.png"
-        studentTeachers={["Mme Dupont", "M. Martin"]} 
-      />
-      <Member 
-        firstName="Isabelle" 
-        lastName="Berriri" 
-        photo="isabelle-berriri.png" 
-        studentTeachers={["CE2 - Mme Rischmann", "CM2 - Mmes Marchand / Duris"]}
-      />
-      <Member 
-        firstName="Lise" 
-        lastName="Delorme" 
-        photo="lise-delorme.png" 
-        studentTeachers={["CE1 - Mme Martres", "CM1 - Mme Dupouy"]} 
-      />
-      <Member 
-        firstName="Sophie" 
-        lastName="Prinet" 
-        photo="sophie-prinet.png" 
-        studentTeachers={["CE2 - Mme Pouget Abadie"]} 
-      />
-      <Member 
-        firstName="Emilie" 
-        lastName="Auclair" 
-        photo="emilie-auclair.png" 
-        studentTeachers={["CE1 - Mme Poubet Abadie"]}
-      />
-      <Member 
-        firstName="Emilie" 
-        lastName="Daufresne" 
-        photo="emilie-daufresne.png" 
-        studentTeachers={["CE1 - Mme Martres", "CM1 - Mmes Dupouy"]}
-      />
+    <!-- Donation Section -->
+    <div class="section-card">
+      <h2 class="text-3xl font-bold mb-6 text-center">FAIRE UN DON</h2>
+      <p class="text-center mb-4 text-gray-700">
+        L’Association des Parents d’Élèves œuvre toute l’année pour soutenir les projets pédagogiques et organiser des moments conviviaux pour nos enfants. Afin de continuer à financer ces initiatives (sorties scolaires, activités culturelles, événements festifs), nous faisons appel à votre générosité.
+      </p>
+      <p class="text-center mb-4 text-gray-700">
+        Chaque don, même modestes, contribue directement à améliorer la vie scolaire et à offrir davantage d’opportunités aux élèves.
+      </p>
+      <p class="text-center font-bold mb-4 text-gray-700">
+        Un grand merci pour votre soutien et votre engagement !
+      </p>
+      <div class="text-center">
+        <a href="#" class="bg-violet-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-violet-800 transition duration-300 shadow-lg">
+          JE FAIS UN DON !
+        </a>
+      </div>
     </div>
-  </div>
 
+    <!-- Idea Box Section -->
+    <div class="section-card">
+      <h2 class="text-3xl font-bold mb-6 text-center">DÉPOSEZ VOS IDÉES !</h2>
+      <form class="max-w-xl mx-auto">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2">Nom *</label>
+          <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-violet-500" required>
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-bold mb-2">Adresse e-mail *</label>
+          <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-violet-500" required>
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-gray-700 font-bold mb-2">Message *</label>
+          <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-violet-500" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="bg-violet-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-violet-800 transition duration-300 shadow-lg">
+            Envoyer le formulaire
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
 </BaseLayout>

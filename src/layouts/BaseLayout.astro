@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
+import { Image } from 'astro:assets';
 const { title } = Astro.props;
+import condaminesLogo from '../images/logo-amicale-high.webp';
 ---
 <html lang="fr">
   <head>
@@ -9,13 +11,15 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="flex flex-col min-h-screen">
-    <header class="sticky top-0 z-50 bg-white/40 shadow-md">
+    <header class="sticky top-0 z-50 bg-linear-to-r from-yellow-300 via-gray-700 to-green-400 shadow-md">
       <nav>
-        <h1 class="text-3xl font-bold p-4 text-center">Amicale des parents d'élèves Versailles Montreuil</h1>
-        <ul class="flex justify-center space-x-4 p-2">
-          <li><a href="/">Accueil</a></li>
-          <li><a href="/events">Evénements</a></li>
-          <li><a href="/team">Equipe</a></li>
+        <a href="/" class="flex justify-center">
+          <Image src={condaminesLogo} alt="Amicale Versailles Montreuil" class="h-16 w-auto" />
+        </a>
+        <ul class="flex justify-center space-x-5 p-4 text-white font-semibold">
+          <li class="hover:bg-white/10"><a href="/">Accueil</a></li>
+          <li class="hover:bg-white/10"><a href="/events">Evénements</a></li>
+          <li class="hover:bg-white/10"><a href="/team">Equipe</a></li>
         </ul>
       </nav>
     </header>
@@ -24,7 +28,7 @@ const { title } = Astro.props;
       <slot /> 
     </main>
 
-    <footer class="bg-gray-200 text-center p-4">
+    <footer class="bg-white/80 shadow mt-auto text-center p-4">
       <p>© 2025 Amicale des parents d'élèves.</p>
     </footer>
   </body>
