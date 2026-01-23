@@ -1,7 +1,34 @@
 @import "tailwindcss";
 
 @layer components {
+  body {
+    @apply text-gray-700;
+  }
+
   .section-card {
     @apply container mx-auto my-8 px-4 py-16 bg-white/70 rounded-3xl shadow-2xl;
+  }
+  .paragraph-body {
+    @apply container text-center mb-4 text-gray-700;
+  }
+
+  .paragraph-heading {
+    @apply text-2xl text-center font-semibold mb-6 text-gray-800;
+  }
+
+  .section-card-title {
+    @apply text-3xl font-bold mb-6 text-center;
+  }
+
+  .btn-primary {
+    @apply bg-violet-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-violet-800 transition duration-300 shadow-lg;
+  }
+
+  .list-primary {
+    @apply list-disc list-inside ml-4;
+  }
+
+  .list-primary li {
+    @apply mt-2;
   }
 }
